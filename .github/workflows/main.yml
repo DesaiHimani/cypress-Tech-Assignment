@@ -1,0 +1,23 @@
+name: Cypress Test
+
+on: [push]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x] 
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+        cache: 'npm'
+    - run: npm ci
+    - name: run tests on Electron 
+      run: docker run -t -v $(pwd):/e2e -w /e2e --entrypoint=cypress cypress/included:11.2.0 run
