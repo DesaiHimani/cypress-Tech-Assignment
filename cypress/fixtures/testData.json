@@ -1,0 +1,16 @@
+{
+  "validCredentials": [
+  {
+    "email": "desai.himani@proton.me",
+    "password": "Bynder@26186",
+    "name": "Himani Desai"
+  }
+],
+  "invalidCredentials": [
+    {
+      "email": "desai.hima@proton.me",
+      "password": "Bynder@26",
+      "error": "You have entered an incorrect username or password."
+    }
+  ]
+}
